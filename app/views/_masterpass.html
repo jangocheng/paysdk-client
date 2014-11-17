@@ -1,10 +1,12 @@
 <!doctype html>
-<html>
-<head>
+<html class="no-js">
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="../styles/main.css">
   <meta charset="utf-8" />
   <title>Simplify Commerce Getting Started Form</title>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://www.simplify.com/commerce/v1/simplify.js"></script>
+  <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
   <script type="text/javascript">
     function simplifyResponseHandler(data) {
       var $paymentForm = $("#simplify-payment-form");
@@ -83,13 +85,20 @@
         return false;
       });
 
-
       SimplifyCommerce.addMasterPassCheckoutButton("buy-with-masterpass-div", "sbpb_NDc3MWM0ZmItMzRlOS00MzIzLTljMTgtZjlhYTZiYWM3ZDI2", simplifyResponseHandler,
         masterPassResponseHandler);
     });
   </script>
-</head>
-<body>
+  </head>
+  <body>
+  <div class="container" ng-controller="PayPalCtrl">
+    <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="/#">Home</a></li>
+        </ul>
+      <h3 class="text-muted">paysdk-client</h3>
+    </div>
+
 <h1>Charge $10 with Simplify Commerce</h1>
 <form id="simplify-payment-form" action="" method="POST">
   <!-- The $10 amount is set on the server side -->
@@ -133,5 +142,6 @@
   <button id="process-payment-btn" type="submit">Process Payment</button>
   <div id="buy-with-masterpass-div"></div>
 </form>
+</div>
 </body>
 </html>

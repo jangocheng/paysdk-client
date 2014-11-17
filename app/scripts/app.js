@@ -9,9 +9,11 @@
  * Main module of the application.
  */
 angular
-  .module('clientApp', []);
+  .module('clientApp', ['ngRoute']);
 
-angular.config(function ($routeProvider) {
+angular
+  .module('clientApp', ["ngRoute"]).config(function ($routeProvider) {
+    console.log("routeprovider=" + $routeProvider);
   $routeProvider
     .when('/about', {
       templateUrl: 'views/_masterpass.html',
