@@ -10,3 +10,14 @@
  */
 angular
   .module('clientApp', []);
+
+angular.config(function ($routeProvider) {
+  $routeProvider
+    .when('/about', {
+      templateUrl: 'views/_masterpass.html',
+      controller: 'AboutCtrl'
+    })
+    .otherwise({
+      redirectTo: '/'
+    });
+});
